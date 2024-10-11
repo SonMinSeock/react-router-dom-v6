@@ -1,5 +1,17 @@
+import { useOutletContext } from "react-router-dom";
+
+interface IFllowersContext {
+  nameOfMyUser: string;
+}
+
 function Fllowers() {
-  return <h1>Fllowers</h1>;
+  const { nameOfMyUser } = useOutletContext<IFllowersContext>();
+
+  return (
+    <>
+      <h1>Here are {nameOfMyUser}의 Fllowers</h1>
+    </>
+  );
 }
 
 export default Fllowers;
