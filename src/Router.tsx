@@ -4,7 +4,8 @@ import About from "./screens/About";
 import Root from "./Root";
 import NotFound from "./screens/NotFound";
 import ErrorComponent from "./components/ErrorComponent";
-import User from "./screens/User";
+import User from "./screens/users/User";
+import Fllowers from "./screens/users/Fllowers";
 
 const routes = [
   {
@@ -23,6 +24,12 @@ const routes = [
       {
         path: "users/:userId",
         element: <User />,
+        children: [
+          {
+            path: "fllowers",
+            element: <Fllowers />,
+          },
+        ],
       },
     ],
     errorElement: <NotFound />,
